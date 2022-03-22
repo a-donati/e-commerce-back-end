@@ -8,11 +8,11 @@ router.get('/', async (req, res) => {
     const categoryData = await Category.findAll(
       {
         // find all categories, including associates products
-        include: [{ model: Product}]
+        include: [{ model: Product }]
       }
     );
     res.status(200).json(categoryData);
-  }catch(err){
+  } catch (err) {
     res.status(500).json(err)
   }
 });
@@ -22,16 +22,16 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
-      include: [{model: Product}]
+      include: [{ model: Product }]
     });
     // if no category with this id found, 404 message
-    if(!categoryData){
-      res.status(404).json({message: 'No category found with this id'});
+    if (!categoryData) {
+      res.status(404).json({ message: 'No category found with this id' });
       return;
     }
     // else, 200 response
     res.status(200).json(categoryData)
-  }catch(err){
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
     // create new category from request body
     const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
-  }catch(err) {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -54,31 +54,31 @@ router.put('/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-  });
-  if(!categoryData[0]){
-    res.status(404).json({message: 'No category by this id'});
-    return;
+    });
+    if (!categoryData[0]) {
+      res.status(404).json({ message: 'No category by this id' });
+      return;
+    }
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
   }
-  res.status(200).json(categoryData);
-}catch(err){
-  res.status(500).json(err);
-}
 });
 
 // delete a category by its `id` value
 router.delete('/:id', async (req, res) => {
-  try{
+  try {
     const categoryData = await Category.destroy({
       where: {
         id: req.params.id,
       },
     });
-    if(!categoryData){
-      res.status(404).json({message: 'No category with this id'});
+    if (!categoryData) {
+      res.status(404).json({ message: 'No category with this id' });
       return;
     }
     res.status(200).json(categoryData);
-  }catch(err){
+  } catch (err) {
     res.status(500).json(err)
   }
 });
