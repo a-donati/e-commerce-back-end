@@ -19,7 +19,7 @@ This project was created using node.js, express, sequelize, and MySQL.
 
 ## Installation
 
-* From GitHub, fork or clone the repo. The user must have Node.js installed. Once forked, run `npm i` from the root directory to install required dependencies
+* From GitHub, fork or clone the repo. The user must have Node.js and MySQL installed. Once forked, run `npm i` from the root directory to install required dependencies
 * Update your MySQL username and password in the `.env.EXAMPLE` file to connect to the database
 * Run `SOURCE db/schema.sql` within MySQL shell in order to create the database
 * Run `node seeds/index.js` to seed database
