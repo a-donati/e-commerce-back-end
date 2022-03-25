@@ -4,7 +4,7 @@
 
 ## Description
 
-This is an express.js API that uses Sequelize to interact with the MySQL database that can be used as the back end for an e-commerce website. The database includes tables for products, categories, tags and product tags.
+This is an express.js API that uses Sequelize to interact with a MySQL database that can be used as the back end for an e-commerce website. The database includes tables for products, categories, tags and product tags.
 User can get, create, update and delete categories, products and tags.
 This project was created using node.js, express, sequelize, and MySQL.   
 
@@ -12,7 +12,7 @@ This project was created using node.js, express, sequelize, and MySQL.
 
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Refrences](#Refrences)
+- [References](#Refrences)
 - [License](#license)
 - [Contributing](#Contributing)
 - [Questions](#Questions)
@@ -26,15 +26,25 @@ This project was created using node.js, express, sequelize, and MySQL.
 * Run `npm start` to start the server
 
 ## Usage
-
-Access the API from the different routes below 
+Access the API from the different routes below
 * Products: `http://localhost:3001/api/products`
 * Categories: `http://localhost:3001/api/categories`
 * Tags: `http://localhost:3001/api/tags`
 
+To access a single product/category/tag, add desired id to the end of the API route
+* `http://localhost:3001/api/products/:id`
+
+* [Click here for video demo of application and API usage](https://drive.google.com/file/d/1ZHmpCLH0K8QobN1wW2TBSlzQO_f80djV/view)
+
+![e-commerce backend API GET, POST, PUT, DELETE requests demonstrated on Insomnia](/images/e-commerce-demo.gif)
+
+
 ## References
 
-
+* [Express](https://www.npmjs.com/package/express)
+* [Sequelize](https://www.npmjs.com/package/sequelize)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [Insomnia](https://insomnia.rest/)
 
 ## License
 
